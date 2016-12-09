@@ -116,6 +116,25 @@ public class SoniaPortletPreferencesHandler
               setter.invoke(object, Integer.parseInt(value));
             }
           }
+          else if (fieldType == long.class)
+          {
+            if (Strings.isNullOrEmpty(value))
+            {
+              String defaultValue = annotation.value();
+              long v = 0;
+
+              if (!Strings.isNullOrEmpty(defaultValue))
+              {
+                v = Long.parseLong(defaultValue);
+              }
+
+              setter.invoke(object, v);
+            }
+            else
+            {
+              setter.invoke(object, Long.parseLong(value));
+            }
+          }
           else if (fieldType == boolean.class)
           {
             boolean v;
@@ -196,6 +215,10 @@ public class SoniaPortletPreferencesHandler
           else if (fieldType == int.class)
           {
             value = Integer.toString((int) getter.invoke(object));
+          }
+          else if (fieldType == long.class)
+          {
+            value = Long.toString((long) getter.invoke(object));
           }
           else if (fieldType.equals(boolean.class))
           {

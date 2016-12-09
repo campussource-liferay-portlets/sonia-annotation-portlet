@@ -13,7 +13,7 @@
   <artifactId>sonia-annotation-portlet</artifactId>
   <packaging>jar</packaging>
   <name>sonia-annotation-portlet</name>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   
   <scm>
     <connection>scm:git:https://github.com/campussource-liferay-portlets/sonia-annotation-portlet</connection>
